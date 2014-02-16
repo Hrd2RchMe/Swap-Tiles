@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C59" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u4k-gI-Ihl"/>
+                        <viewControllerLayoutGuide type="bottom" id="LtD-d7-yEo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MainMenu.png" translatesAutoresizingMaskIntoConstraints="NO" id="q9G-MW-Osq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swap to tiles next to each other. Try to get 3 or 4 in a row to earn points! Get as many points as you can in 10 moves!" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="oqu-lI-hMw">
+                                <rect key="frame" x="20" y="273" width="280" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11f-KJ-7i6">
+                                <rect key="frame" x="20" y="424" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Start Game!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bfe-T6-W5g" kind="modal" id="91H-xB-wuM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="228"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="bfW-ii-r5I">
+            <objects>
+                <viewController id="bfe-T6-W5g" customClass="Game" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="82e-Vp-zQR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eo7-CG-MX3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wdH-u9-JQl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GameBackGround.png" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-OG-AnD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-vL-y3u">
+                                <rect key="frame" x="52" y="61" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="7V0-Wf-cm5">
+                                <rect key="frame" x="111" y="61" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Th6-tK-j6B">
+                                <rect key="frame" x="169" y="61" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-3E-ZJ4">
+                                <rect key="frame" x="227" y="61" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-P2-Fy8">
+                                <rect key="frame" x="52" y="122" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="yee-Ak-Ahb">
+                                <rect key="frame" x="111" y="122" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-TX-Du3">
+                                <rect key="frame" x="169" y="122" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-KH-ggX">
+                                <rect key="frame" x="227" y="122" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="WI8-0Z-jdw">
+                                <rect key="frame" x="52" y="181" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-Xq-kvh">
+                                <rect key="frame" x="111" y="181" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="6VD-Sq-edi">
+                                <rect key="frame" x="169" y="181" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="HHU-Kt-cjL">
+                                <rect key="frame" x="227" y="181" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="PGU-Jc-oMc">
+                                <rect key="frame" x="52" y="239" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="toy-da-SNM">
+                                <rect key="frame" x="111" y="239" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-pK-MUM">
+                                <rect key="frame" x="169" y="239" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SelectedTile.png" translatesAutoresizingMaskIntoConstraints="NO" id="JHv-lf-Nn4">
+                                <rect key="frame" x="227" y="239" width="38" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEc-Vn-xY3">
+                                <rect key="frame" x="56" y="65" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="PinkTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile1Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="l9f-Tp-FNs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6G-DJ-aSS">
+                                <rect key="frame" x="115" y="65" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile2Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="2Ac-Qz-ub1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxk-0W-4cL">
+                                <rect key="frame" x="173" y="65" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile3Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="1hG-KS-be8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcm-3l-Xte">
+                                <rect key="frame" x="231" y="65" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="OrangeTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile4Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="MRb-DQ-8N8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYW-ao-qC0">
+                                <rect key="frame" x="173" y="185" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile11Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="xgL-ap-zkX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwK-8D-9sO">
+                                <rect key="frame" x="56" y="243" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile13Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="g0R-81-dvh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn9-xY-1Vc">
+                                <rect key="frame" x="56" y="185" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="PinkTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile9Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="5Hg-Jm-mUA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfH-oj-HO6">
+                                <rect key="frame" x="115" y="185" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile10Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="mjz-oG-7d6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-eJ-Kxh">
+                                <rect key="frame" x="115" y="126" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="OrangeTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile6Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="UCh-Oe-jsW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl5-U3-q2l">
+                                <rect key="frame" x="56" y="126" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile5Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="1nl-a5-diJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPm-kH-im4">
+                                <rect key="frame" x="173" y="126" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="BlueTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile7Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="qXE-8x-3R0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-aU-OCW">
+                                <rect key="frame" x="231" y="126" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="PinkTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile8Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="QMt-1e-njd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-Cf-n4Z">
+                                <rect key="frame" x="231" y="185" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="BlueTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile12Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="JS1-hF-ZPe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iem-Mb-0mM">
+                                <rect key="frame" x="173" y="243" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="BlueTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile15Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="Dk5-LJ-Ng8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-JP-QbR">
+                                <rect key="frame" x="115" y="243" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="OrangeTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile14Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="Uu8-Zi-Efx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6g-vy-wiG">
+                                <rect key="frame" x="231" y="243" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="GreenTile.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Tile16Button:" destination="bfe-T6-W5g" eventType="touchUpInside" id="PhS-cI-ok2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="Tile1" destination="SEc-Vn-xY3" id="wXr-bA-9Vc"/>
+                        <outlet property="Tile10" destination="UfH-oj-HO6" id="Sjp-v3-HQf"/>
+                        <outlet property="Tile10Selected" destination="XQt-Xq-kvh" id="pOw-rd-nMi"/>
+                        <outlet property="Tile11" destination="JYW-ao-qC0" id="rVY-a8-VjM"/>
+                        <outlet property="Tile11Selected" destination="6VD-Sq-edi" id="2uC-rh-4YM"/>
+                        <outlet property="Tile12" destination="lGa-Cf-n4Z" id="CuA-Yz-cWc"/>
+                        <outlet property="Tile12Selected" destination="HHU-Kt-cjL" id="8Lc-Ww-t9q"/>
+                        <outlet property="Tile13" destination="IwK-8D-9sO" id="2MV-87-dpv"/>
+                        <outlet property="Tile13Selected" destination="PGU-Jc-oMc" id="PM2-aG-Iuj"/>
+                        <outlet property="Tile14" destination="KJb-JP-QbR" id="wsw-Lq-CPc"/>
+                        <outlet property="Tile14Selected" destination="toy-da-SNM" id="ON8-CF-B0W"/>
+                        <outlet property="Tile15" destination="iem-Mb-0mM" id="LdH-sr-kbd"/>
+                        <outlet property="Tile15Selected" destination="VIb-pK-MUM" id="M5M-Q6-bzl"/>
+                        <outlet property="Tile16" destination="e6g-vy-wiG" id="AYl-A0-hmX"/>
+                        <outlet property="Tile16Selected" destination="JHv-lf-Nn4" id="faj-Ah-BZe"/>
+                        <outlet property="Tile1Selected" destination="Gfv-vL-y3u" id="XSN-tt-NOK"/>
+                        <outlet property="Tile2" destination="S6G-DJ-aSS" id="gCx-VH-aXF"/>
+                        <outlet property="Tile2Selected" destination="7V0-Wf-cm5" id="DJT-ca-nE5"/>
+                        <outlet property="Tile3" destination="sxk-0W-4cL" id="lrU-Ng-mrG"/>
+                        <outlet property="Tile3Selected" destination="Th6-tK-j6B" id="r2B-wR-Zr1"/>
+                        <outlet property="Tile4" destination="Hcm-3l-Xte" id="0TW-EA-Q0G"/>
+                        <outlet property="Tile4Selected" destination="hfa-3E-ZJ4" id="QzV-J0-79C"/>
+                        <outlet property="Tile5" destination="Jl5-U3-q2l" id="LAt-nt-267"/>
+                        <outlet property="Tile5Selected" destination="Gxc-P2-Fy8" id="9kX-rz-4NF"/>
+                        <outlet property="Tile6" destination="7N9-eJ-Kxh" id="Tlu-JT-VpV"/>
+                        <outlet property="Tile6Selected" destination="yee-Ak-Ahb" id="lft-gc-1TR"/>
+                        <outlet property="Tile7" destination="OPm-kH-im4" id="NrI-Xn-jed"/>
+                        <outlet property="Tile7Selected" destination="a6e-TX-Du3" id="lfd-A5-qqS"/>
+                        <outlet property="Tile8" destination="a5D-aU-OCW" id="fkK-gc-9TZ"/>
+                        <outlet property="Tile8Selected" destination="Xaq-KH-ggX" id="dQI-XQ-x3c"/>
+                        <outlet property="Tile9" destination="xn9-xY-1Vc" id="Db2-ma-x9g"/>
+                        <outlet property="Tile9Selected" destination="WI8-0Z-jdw" id="gjC-8h-mgW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crr-9u-9FI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="228"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BlueTile.png" width="50" height="50"/>
+        <image name="GameBackGround.png" width="320" height="480"/>
+        <image name="GreenTile.png" width="50" height="50"/>
+        <image name="MainMenu.png" width="320" height="480"/>
+        <image name="OrangeTile.png" width="50" height="50"/>
+        <image name="PinkTile.png" width="50" height="50"/>
+        <image name="SelectedTile.png" width="50" height="50"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
